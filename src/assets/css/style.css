@@ -1,0 +1,172 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #F4F4F4;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#wrap {
+    display: grid;
+    gap: 2rem;
+    grid-template:
+        "header" 4rem
+        "content" auto
+        "footer" 5rem / 1fr;
+    min-height: 100vh;
+}
+
+.content-wrapper {
+    justify-self: center;
+}
+
+.noscroll {
+    overflow-y: hidden;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.white-round {
+    background-color: white;
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 0 15px -10px black;
+}
+
+.page-title {
+    width: max-content;
+    background-color: white;
+    margin: 0 auto 2rem;
+    font-size: 1.6rem;
+    border-radius: 1.5rem;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 0 15px -10px black;
+}
+.bold {
+    font-weight: bold;
+}
+.link {
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    color: #444;
+    transition: color 150ms;
+}
+
+.link::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 1rem;
+    height: 2px;
+    background-color: #555;
+    border-radius: 2px;
+    transition: 200ms;
+}
+
+.link:visited {
+    color: #444
+}
+
+.link:hover::after {
+    width: 100%;
+}
+
+.link:active {
+    color: #222;
+}
+
+.link:active::after {
+    background-color: #222;
+}
+
+.contacts-img {
+    cursor: pointer;
+    transition: filter 200ms;
+}
+
+.contacts-img:hover {
+    filter: invert(0.3);
+}
+
+.contacts-img:active {
+    filter: invert(0);
+}
+
+::-webkit-scrollbar {
+    width: 0.7rem;
+}
+
+::-webkit-scrollbar-track {
+    background: #DDD;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+
+::selection {
+    background-color: #00000022;
+}
+
+.no-highlight {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.15s linear;
+
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
+
+@media (max-width: 767px) {
+    .content-wrapper {
+        width: 90%;
+    }
+}
+
+@media (min-width: 768px) {
+    .content-wrapper {
+        width: 80%;
+    }
+}
+
+@media (min-width: 1440px) {
+    .page-title {
+        display: none;
+    }
+}
+
+@media (min-width: 2000px) {
+    .content-wrapper {
+        width: 70%;
+    }
+}
